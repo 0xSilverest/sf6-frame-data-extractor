@@ -12,9 +12,13 @@ SF6 Webscraper extracts frame data from the official Street Fighter 6 website an
 
 Run the extractor from the command line, providing character names as arguments:
 
-    $ lein run aki
+    $ lein run aki --format json
 
 This will create JSON files aki_moves_data.json in the current directory.
+
+    $ lein run guile --format csv
+
+This will create JSON files guile_moves_data.csv in the current directory.
 
 ## Output Format
 
@@ -34,9 +38,9 @@ The tool generates JSON files with the following structure for each move:
     "recovery": "8",
     "on-hit": "+4",
     "on-block": "+2",
-    "cancel-ability": "SP,SA,DCC",
-    "damage": "30",
-    "combo-scaling": ["90%", "80%"],
+    "cancel-ability": "C",
+    "damage": "300",
+    "combo-scaling": ["Starter scaling 20%", " Combo scaling 15%"],
     "drive-gauge-gain-hit": "100",
     "drive-gauge-lose-dguard": "100",
     "drive-gauge-lose-punish": "100",
@@ -56,14 +60,8 @@ The tool generates JSON files with the following structure for each move:
 
 ## Todo
 
-- [  ] Add other text inputs
-- [  ] Add CSV export functionality
-- [  ] Implement error handling for network issues
-- [  ] Add support for batch processing of all characters
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
+- [ ] Implement error handling for network issues
+- [ ] Add support for batch processing of all characters
 
 ## Disclaimer
 
